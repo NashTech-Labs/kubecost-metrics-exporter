@@ -1,0 +1,19 @@
+grafana:
+  enabled: true
+  additionalDataSources: 
+  - name: kubecost
+    access: proxy
+    basicAuth: false
+    basicAuthPassword: pass
+    basicAuthUser: daco
+    editable: false
+    jsonData:
+        tlsSkipVerify: true
+    orgId: 1
+    type: prometheus
+    url: "http://prometheus-operated.cost-model.svc.cluster.local:9090"
+    version: 1
+
+prometheus:
+  enabled: false
+  

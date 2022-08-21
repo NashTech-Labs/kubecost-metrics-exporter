@@ -1,0 +1,14 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    prometheus: cost-model
+  name: cost-model
+spec:
+  endpoints:
+  - path: /metrics
+    port: cost-model
+  selector:
+    matchLabels:
+      app: kubecost
+      prometheus: cost-model
